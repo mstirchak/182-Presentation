@@ -4,10 +4,7 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
-
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<title>The Physics of Computers</title>
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +12,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/league.css" id="theme">
+		<link rel="stylesheet" href="css/theme/moon.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -29,9 +26,6 @@
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 
-		<!--[if lt IE 9]>
-		<script src="lib/js/html5shiv.js"></script>
-		<![endif]-->
 	</head>
 
 	<body>
@@ -47,201 +41,122 @@
                 
                 <!-- Intro -->
 				<section>
-                    <section>
 					<h2>How do Computers Work?</h2>
-					<p>
-					How do we get from here...
-                    </p>
-                        <img width="300" height="300" data-src="http://www.couponcloset.net/wp-content/uploads/2011/09/un-plug-cord.jpg">
-                    </section>
-                    <section>
-                        <br>
-                        <p>
-                        To here?
-                        </p>
-                        <img width="550" height="400" data-src="http://images.wisegeek.com/computer-tower-monitor-keyboard-and-mouse.jpg">  
-                    </section>
-                    <section>
-                       <br>
-                       <h2>Transistors</h2>
-                        <img width="550" height="400" data-src="http://www.bbc.co.uk/staticarchive/8dc8d062055afa560657abd7d9adfa986e85de81.gif">
-                    </section>
+                       <ul>
+                          <li>Modern computers read in electric signals as either 1's(on) or 0's(off).</li>
+                          <li>Transistors are uniquely equipped to read in these signals, which are called bits.</li>
+                          <li>By combining transistors in a circuit, we can construct boolean logic gates which can perform operations on bits.</li>
+                       </ul>
 				</section>
 
                 <!-- Topics -->
                 <section>
                 <h3>Topics</h3>
                     <ul>
-						<li>Transistor Theory</li>
+						<li>Transistor Theory: A focus on MOSFETs</li>
 						<li>Bitwise logic using transistors </li>
                            <ul>
                                <li>AND, OR gates, etc</li>
                                <li> Construction of an Arithmetic Logic unit and the CPU</li>
                            </ul>
 						<li>Current research in transistors</li>
+                           <ul>
+                               <li>Tunnel Field-Effect Transistors</li>
+                               <li>Single-Atom Transistors</li>
+                           </ul>
 						<li>Quantum Computing</li>
 					</ul>
                 </section>
 
+                <!-- MOSFET Theory -->
 				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
+                    <section>
+					<h2>MOSFETs</h2>
+                    <img width="200" height="200" data-src="http://upload.wikimedia.org/wikipedia/commons/thumb/4/46/JFET_N-Channel_Labelled.svg/200px-JFET_N-Channel_Labelled.svg.png">
+                    <p>
+                       <ul>
+                           <li>MOSFET: Metal Oxide Semiconductor Field-Effect Transistor.</li>
+                           <li>Consists of drain, gate, and source outlets.</li>
+                           <li>A positive voltage across the gate determines if the current from the drain passes to the source</li>
+                       </ul>
+                    </p> 
+                   </section>
+                
+                   <section>
+                       <br>
+                       <h2>MOSFET Architecture</h2>
+                       <img width="600" height="180" data-src="http://upload.wikimedia.org/wikipedia/commons/7/79/Lateral_mosfet.svg">
+                       <p>
+                          <ul>
+                             <li>drain and source feed into doped (n-type) regions of the semiconductor, and between them is a p-type region</li>
+                             <li>There exists a depletion layer between the n- and p-type regions which repels current.</li>
+                             <li>When a positive voltage is across the gate, a conduction channel is formed from drain to source. </li>
+                          </ul>
+                       </p>
+                   </section>
+            
+                  <section>
+                      <br>
+                      <h3>Example: MOSFET Switch</h3>
+                      <img width="500" height="325" data-src="https://teachmetomake.files.wordpress.com/2011/05/fetswitch.jpg">
+                      <ul>
+                         <li>When Switch is open, no voltage across gate. No current flows from drain to source, and lamp (M) is off.</li>
+                         <li>When switch is closed, the voltage across the gate allows current to flow. Lamp turns on.</li>
+                      </ul>
+                  </section>
+            
 				</section>
-
+      
 				<section>
-					<h2>Point of View</h2>
+                    <section>
+					<h2>Boolean Logic</h2>
 					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
+						MOSFET's allow us to read in signals as either on or off, 1 or 0. We can now construct an AND gate:
+                    </p>
+                        <img width="200" height="300" data-src="http://upload.wikimedia.org/wikipedia/commons/7/7c/NMOS_AND_gate.png">
+                    </section>
+                    <section>
+                    <br>
+                    <h2>Other Logic Gates</h2>
+                        <img width="200" height="300" data-src="http://upload.wikimedia.org/wikipedia/commons/3/30/NMOS_OR_gate.png">
+                        <img width="200" height="300" data-src="http://upload.wikimedia.org/wikipedia/commons/c/c2/NMOS_NAND.png">
+                        <img width="200" height="300" data-src="http://upload.wikimedia.org/wikipedia/commons/a/ab/NMOS_NOR.png">
+                        <p>These are just some of the many different logic gates that transistors can create. Each of these gates have their own unique  truth tables, and have uses in different places in computer processors.</p>
 
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment roll-in">roll-in</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
+                    </section>
 				</section>
 
 				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
+                    <section>
+					   <h2>Binary Operations</h2>
+					   <p>
+						Some very smart people have figured out that these logic gates, when combined judiciously, can perform arithmetic operations on bits, such as addition:
+					   </p>
+                       <img width="600" height="225" data-src="http://estss.com/NCS/_IMAGES/PROJECTS/382_IC/382_FA_diagram.gif">
+                       <p>This is a one-bit adder. It takes in two bits, A and B, and returns the proper binary sum and carry.</p>
+                    </section>
+                    
+                    <section>
+                        <br>
+                        <p>Adding more bits at the same time is simply a matter of connecting many one-bit adders together:</p>
+                        <img width="800" height="350" data-src="http://venividiwiki.ee.virginia.edu/mediawiki/images/9/91/8-bit_KSA.jpg">
+                        <p>This is an 8-bit adder. I'll let you imagine what a 64-bit adder looks like.</p>
+                    </section>
 				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
+                
 				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
-      }
-    }
-  }
-}
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+                    <section>
+					   <h2>the Arithmetic Logic Unit</h2>
+			           <p>The Arithmetic Logic Unit (ALU) is the fundamental building block of a computer processor. It contains hardware for such operations as adding, subtracting, and in some cases multiplying and dividing.</p>
+                       <img width="800" height="350" data-src="http://bucarotechelp.com/computers/anatomy/images/alu.gif">
+				   </section>
+                   
+                   <section>
+                      <br>
+                      <p>Finally, at long last, we have our view of the Central Processing Unit:</p>
+                       <img width="800" height="500" data-src="http://courses.cs.vt.edu/csonline/MachineArchitecture/Lessons/CPU/cpu_circuit.gif">
+                   </section>
+                </section>
 
 				<section>
 					<h2>Marvelous List</h2>
